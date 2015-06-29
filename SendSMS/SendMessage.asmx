@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="SendMessage.asmx.cs" Class="SendSMS.Service1" %>
