@@ -21,8 +21,21 @@ namespace SendSMS
         [WebMethod]
         public void SendMessage(string Mobile,string Message)
         {
-            K2SMS.SendTxt.SendMessage(Message, Mobile);
+            string[] numbers = Mobile.Split(';');
+            if (numbers.Count() == 0)
+            {
+                K2SMS.SendTxt.SendMessage(Message, Mobile);
+            }
+            else
+            {
+                foreach (string number in numbers)
+                {
+                    K2SMS.SendTxt.SendMessage(Message, number);
+                }
+            }
+           
 
         }
+      
     }
 }
